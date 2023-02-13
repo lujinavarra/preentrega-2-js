@@ -56,7 +56,7 @@ while (opcion !== "salir") {
         let dni;
         do {
             dni = parseInt(prompt("Ingrese su DNI"));
-            if (isNaN(dni)) alert("Ingrese un valor numérico válido para dni");
+            if (isNaN(dni)) alert("Ingrese un valor numérico válido para dni")
             } while (isNaN(dni) && dni > 0);
         
         let telefono;
@@ -66,7 +66,11 @@ while (opcion !== "salir") {
         } while (isNaN(telefono) && telefono > 0);
 
         const pacientes1 = new pacientes (nombrePaciente, dni, telefono);
-
-        alert(pacientes1.nombrePaciente + ", nos pondremos en contacto con usted al numero " + pacientes1.telefono + " para definir fecha y horario del turno. Muchas gracias por su elección");
+        if (nombrePaciente === " " && dni !== isNaN && telefono !== isNaN){
+            alert(pacientes1.nombrePaciente + ", nos pondremos en contacto con usted al numero " + pacientes1.telefono + " para definir fecha y horario del turno. Muchas gracias por su elección");
+        } else {
+            alert ("Sus datos no fueron cargados correctamente, por favor verifique sus datos");
+        }
+        
     }
 }
