@@ -41,7 +41,7 @@ while (opcion !== "salir") {
         alert("Su turno se agendó correctamente");
         console.log(servicios); 
         while (opcion !== "si" && opcion !== "no") {
-                opcion = prompt("¿Desea elegir otro servicio? \n (si/no)").toLowerCase();
+                opcion = prompt("¿Desea agendar otro turno? \n (si/no)").toLowerCase();
         }
         if (opcion === "no") {
                 opcion = "salir";
@@ -59,15 +59,13 @@ let dni = parseInt(prompt("Ingrese su DNI"));
 let reglaDni = Number(dni) >0;
 console.log(reglaDni);
 
-
-
 let telefono = parseInt(prompt("Ingrese su número de teléfono"));
 let reglaTelefono = Number(telefono) >0;
 console.log (reglaTelefono);
 
 if (reglaNombrePaciente === true && reglaDni === true && reglaTelefono === true){
         const pacientes1 = new pacientes (nombrePaciente, dni, telefono);
-        alert (pacientes1.nombrePaciente + ", nos pondremos en contacto con usted al numero " + pacientes1.telefono + " para definir fecha y horario del turno. Muchas gracias por su elección")
+        alert (pacientes1.nombrePaciente + ", nos pondremos en contacto con usted al numero " + pacientes1.telefono + " para definir fecha y horario del turno. Muchas gracias por elegirnos")
 } else {
-        alert("Sus datos no fueron cargados correctamente, por favor verifique sus datos");
+        alert("Sus datos no fueron cargados correctamente, por favor realice nuevamente su selección");
 }
